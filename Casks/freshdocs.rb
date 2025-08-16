@@ -2,7 +2,7 @@
 cask "freshdocs" do
   desc "CLI tool to keep your documentation up to date with your code."
   homepage "https://github.com/Dullaz/freshdocs"
-  version "0.0.3"
+  version "0.0.4"
 
   livecheck do
     skip "Auto-generated on release."
@@ -12,61 +12,55 @@ cask "freshdocs" do
 
   on_macos do
     on_intel do
-      url "https://github.com/dullaz/freshdocs/releases/download/v0.0.3/freshdocs_Darwin_x86_64.tar.gz",
+      url "https://github.com/dullaz/freshdocs/releases/download/v0.0.4/freshdocs_Darwin_x86_64.tar.gz",
         using: :homebrew_curl,
         cookies: {
           "license" => "accept-backup",
         },
         referer: "https://github.com/Dullaz/homebrew-freshdocs",
         header: [
-          "X-Version: 0.0.3",
+          "X-Version: 0.0.4",
         ]
-      sha256 "57c17072389e596ab007d90ffc7b711d4c54243cf2ac828df063657195ee78ab"
+      sha256 "764c307cb1ebbe34a18f9299bd3a71d84ae3c838f08a80aa57ff34f971768f20"
     end
     on_arm do
-      url "https://github.com/dullaz/freshdocs/releases/download/v0.0.3/freshdocs_Darwin_arm64.tar.gz",
+      url "https://github.com/dullaz/freshdocs/releases/download/v0.0.4/freshdocs_Darwin_arm64.tar.gz",
         using: :homebrew_curl,
         cookies: {
           "license" => "accept-backup",
         },
         referer: "https://github.com/Dullaz/homebrew-freshdocs",
         header: [
-          "X-Version: 0.0.3",
+          "X-Version: 0.0.4",
         ]
-      sha256 "1550442702bee33b775f142973efa55392e96e5a2cbb59955b8ab038ed18ba29"
+      sha256 "2100592581d0b7cd0ffaf2c397901b6fa0c44ea8b69267b9fa8ed13bafd3c845"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/dullaz/freshdocs/releases/download/v0.0.3/freshdocs_Linux_x86_64.tar.gz",
+      url "https://github.com/dullaz/freshdocs/releases/download/v0.0.4/freshdocs_Linux_x86_64.tar.gz",
         using: :homebrew_curl,
         cookies: {
           "license" => "accept-backup",
         },
         referer: "https://github.com/Dullaz/homebrew-freshdocs",
         header: [
-          "X-Version: 0.0.3",
+          "X-Version: 0.0.4",
         ]
-      sha256 "23e288bd8886f73c19c0a924795c2e7966d0d67c678a281fa08e84fc6bf7f1d7"
+      sha256 "5b70ae18c0d6d7c16dbb309d9fa6da5726f00a5f7a161157f3f97ece16dd8e1d"
     end
     on_arm do
-      url "https://github.com/dullaz/freshdocs/releases/download/v0.0.3/freshdocs_Linux_arm64.tar.gz",
+      url "https://github.com/dullaz/freshdocs/releases/download/v0.0.4/freshdocs_Linux_arm64.tar.gz",
         using: :homebrew_curl,
         cookies: {
           "license" => "accept-backup",
         },
         referer: "https://github.com/Dullaz/homebrew-freshdocs",
         header: [
-          "X-Version: 0.0.3",
+          "X-Version: 0.0.4",
         ]
-      sha256 "655890eb78198ab8c9b2b10bb8eb31a70a4722289f7aaad04b9bec3d42dc49c9"
-    end
-  end
-
-  postflight do
-    if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
-      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/freshdocs.app"]
+      sha256 "ff5079c12084d893c966c427573194b0b7554c486aa8612a3c7a316937e52d4f"
     end
   end
 
